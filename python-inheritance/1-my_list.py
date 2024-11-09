@@ -1,72 +1,67 @@
-#!/usr/bin/python3
-'''Class Rectangle that inherits from BaseGeometry'''
-
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> MyList = _import_('1-my_list').MyList
 
 
-class Rectangle(BaseGeometry):
-    '''Rectangle class that inherits BaseGeometry'''
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list
+[1]
+>>> my_list.append(2)
+>>> my_list
+[1, 2]
+>>> my_list.pop()
+2
+>>> my_list
+[1]
+>>> my_list.append(4)
+>>> my_list.append(6)
+>>> my_list.append(3)
+>>> my_list.print_sorted()
+[1, 3, 4, 6]
+>>> my_list
+[1, 4, 6, 3]
 
-    def __init__(self, width, height):
-        '''A function that creates a rectangle '''
-        self.integer_validator('width', width)
-        self.__width = width
-        self.integer_validator('height', height)
-        self.__height = height
+>>> my_list.clear()
+>>> my_list.append(1)
+>>> my_list.append(5)
+>>> my_list.append(8)
+>>> my_list.append(7)
+>>> my_list.append(9)
+>>> my_list.append(2)
+>>> my_list.append(0)
+>>> new_l = my_list.copy()
+>>> new_l
+[1, 5, 8, 7, 9, 2, 0]
+>>> my_list.count(2)
+1
+>>> my_list.index(3)
+Traceback (most recent call last):
+        ...
+ValueError: 3 is not in list
 
-    def area(self):
-        '''Function to return the area of the rectangle'''
-        return self.__height * self.__width
+>>> my_list.pop(3)
+7
+>>> my_list
+[1, 5, 8, 9, 2, 0]
 
-    def __str__(self):
-        '''Return the print() and str() representation of a Rectangle '''
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+>>> my_list.insert(9, 0)
+>>> my_list
+[1, 5, 8, 9, 2, 0, 0]
 
+>>> my_list.pop(20)
+Traceback (most recent call last):
+        ...
+IndexError: pop index out of range
 
-if __name__ == "__main__":
-    # Case: print(dir(Rectangle))
-    print(dir(Rectangle))
+>>> my_list.print_sorted(8)
+Traceback (most recent call last):
+        ...
+TypeError: print_sorted() takes 1 positional argument but 2 were given
 
-    # Case: r = Rectangle(1, 4) print(r.area())
-    r = Rectangle(1, 4)
-    print(r.area())
-
-    # Case: r = Rectangle(1411, 781) print(r.area())
-    r = Rectangle(1411, 781)
-    print(r.area())
-
-    # Case: r = Rectangle(5, 5) print(r.area())
-    r = Rectangle(5, 5)
-    print(r.area())
-
-    # Case: r = Rectangle(1411, 781) print®
-    try:
-        r = Rectangle(1411, 781)
-        print(r)
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-
-    # Case: r = Rectangle(1, 4) print®
-    try:
-        r = Rectangle(1, 4)
-        print(r)
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-
-    # Case: r = Rectangle(5, 5) print®
-    try:
-        r = Rectangle(5, 5)
-        print(r)
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-
-    # Case: r = Rectangle() r = Rectangle(1) r = Rectangle(1, [12, 52]) r = Rectangle(4, 5) r = Rectangle(4, 5)
-    try:
-        r = Rectangle()
-        r = Rectangle(1)
-        r = Rectangle(1, [12, 52])
-        r = Rectangle(4, 5)
-        r = Rectangle(4, 5)
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-
+>>> my_list.clear()
+>>> my_list.print_sorted()
+[]
+>>> my_list.append(9)
+>>> my_list.append(-2)
+>>> my_list.append(8)
+>>> my_list.print_sorted()
+[-2, 8, 9]
