@@ -1,6 +1,10 @@
 #!/usr/bin/python3
-class Mylist(list):
-    def Printsorted(self):
-        #The function is to print list in ascending order
-        print(sorted(self))
+''' No modules imported '''
 
+
+class MyList(list):
+    '''Our base class is list '''
+
+    def print_sorted(self):
+        ''' The function to print sorted list in ascending order '''
+        print(sorted(self))
