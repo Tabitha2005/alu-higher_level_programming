@@ -1,3 +1,14 @@
-#!/bin/bash
-# a Bash script that takes in a URL, sends a request to that URL, and displays the size of the body of the response
-curl -sI "$1" | grep 'Content-Length' | awk '{print $2}'
+#!/usr/bin/python3
+"""a Python script that fetches https://alu-intranet.hbtn.io/status"""
+
+
+import urllib.request
+
+
+if __name__ == '__main__':
+    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
+        content = response.read()
+        print("Body response:")
+        print("\t- type: {}".format(type(content)))
+        print("\t- content: {}".format(content))
+        print("\t- utf8 content: {}".format(content.decode("utf-8")))
