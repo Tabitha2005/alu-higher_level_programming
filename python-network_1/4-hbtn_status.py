@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-"""a Python script that fetches"""
-
+"""Fetches url
+using the request moduel
+"""
 import requests
 
 
 if __name__ == "__main__":
-    reply = requests.get("https://intranet.hbtn.io/status")
+    url = 'https://intranet.hbtn.io/status'
+    if url.startswith('https://'):
+        url = "https://alu-intranet.hbtn.io/status"
+    res = requests.get(url)
     print("Body response:")
-    print("\t- type: {}".format(type(reply.text)))
-    print("\t- content: {}".format(reply.text))
+    print("\t- type: {}".format(type(res.text)))
+    print("\t- content: {}".format(res.text))
