@@ -1,1 +1,1 @@
-JavaScript codes
+javascript introduction
