@@ -1,1 +1,1 @@
-javascript introduction
+javascript-warm up
